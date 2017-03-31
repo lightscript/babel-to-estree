@@ -1,7 +1,7 @@
 {
-  "name": "babel-eslint",
-  "version": "7.2.1",
-  "description": "Custom parser for ESLint",
+  "name": "babel-to-estree",
+  "version": "0.0.1",
+  "description": "Translate a Babel AST to an ESTree-compliant AST. A \"fork\" of babel-eslint/babylon-to-espree.",
   "main": "index.js",
   "files": [
     "index.js",
@@ -12,7 +12,6 @@
     "url": "https://github.com/babel/babel-eslint.git"
   },
   "dependencies": {
-    "babel-code-frame": "^6.22.0",
     "babel-traverse": "^6.23.1",
     "babel-types": "^6.23.0",
     "babylon": "^6.16.1"
@@ -25,15 +24,15 @@
     "preversion": "npm test",
     "changelog": "git log `git describe --tags --abbrev=0`..HEAD --pretty=format:' * %s (%an)' | grep -v 'Merge pull request'"
   },
-  "author": "Sebastian McKenzie <sebmck@gmail.com>",
+  "author": "Alex Rattray <rattray.alex@gmail.com>",
   "license": "MIT",
   "engines": {
     "node": ">=4"
   },
   "bugs": {
-    "url": "https://github.com/babel/babel-eslint/issues"
+    "url": "https://github.com/lightscript/babel-to-estree/issues"
   },
-  "homepage": "https://github.com/babel/babel-eslint",
+  "homepage": "https://github.com/lightscript/babel-to-estree",
   "devDependencies": {
     "babel-eslint": "^7.0.0",
     "dedent": "^0.7.0",
