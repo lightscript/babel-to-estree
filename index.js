@@ -5,7 +5,7 @@ var traverse        = require("babel-traverse").default;
 
 var eslintOptions = {};
 
-exports.transform = function(ast, code) {
+exports.toEstree = function(ast, code) {
   babylonToEspree(ast, traverse, tt, code);
   return ast;
 };
@@ -52,7 +52,7 @@ exports.parseNoPatch = function (code, options) {
 
   var ast = parse(code, opts);
 
-  exports.transform(ast, code);
+  exports.toEstree(ast, code);
 
   return ast;
 };
