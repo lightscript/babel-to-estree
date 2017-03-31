@@ -15,13 +15,16 @@ import { transform } from 'babel-core'
 import { toEstree } from 'babel-to-estree'
 import myPlugin from './my-babel-plugin'
 
-const { ast, code } = transform('code("here");', { plugins: [myPlugin] })
+const source = 'code("here");'
+
+const { ast, code } = transform(source, { plugins: [myPlugin] })
 
 // mutates `ast` input
-toEstree(ast, code);
+toEstree(ast, source);
 
 // contains Literal, not StringLiteral
-console.log(ast.body[0].expression.arguments[0]);
+console.log(ast.body[0].expression.arguments[0])
+
 // Node {
 //   type: 'Literal',
 //   start: 5,
