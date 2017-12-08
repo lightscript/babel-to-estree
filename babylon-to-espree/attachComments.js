@@ -53,7 +53,12 @@ module.exports = function (ast, comments, tokens) {
     }
   }
   if (ast.body && ast.body.length > 0) {
-    ast.loc.start.line = ast.body[0].loc.start.line;
-    ast.range[0] = ast.body[0].start;
+    // when reading from a manipulated ast, the loc might not be present for generated nodes
+    // like the "use strict" directive
+    var bodyWithLoc = ast.body.find((b) => b.loc);
+    if (bodyWithLoc) {
+      ast.loc.start.line = bodyWithLoc.loc.start.line;
+      ast.range[0] = bodyWithLoc.start;
+    }
   }
 };
