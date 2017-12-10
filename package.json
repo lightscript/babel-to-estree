@@ -1,6 +1,6 @@
 {
   "name": "babel-to-estree",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Translate a Babel AST to an ESTree-compliant AST. A \"fork\" of babel-eslint/babylon-to-espree.",
   "main": "index.js",
   "files": [
